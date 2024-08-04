@@ -1,0 +1,119 @@
+-----------------------------------------------------------------------------------------
+									Helpler Method
+-----------------------------------------------------------------------------------------
+
++ read_line_from_file(path:string) : vectro<string>
++ write_line_on_file(path:string, line:vector<string>, append:bool = false) : void
++ split_string(str:string, delematir:char = ',') : vector<string>
++ to_int(str:string) : int
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+									   Question
+-----------------------------------------------------------------------------------------
+
+- question_id : int
+- parent_question_id : int
+- from_user_id : int
+- to_user_id : int
+- is_anonymous_questions : bool
+- question_text : string
+- answer_text : string
+
++ Question():...{}
++ Question(str:string) {...}
++ to_string() : string
++ print_to_question() : void
++ print_from_question() : void
++ print_feed_question() : void
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+									     User
+-----------------------------------------------------------------------------------------
+
+- user_id : int
+- user_name : string
+- password : string
+- name : string
+- email: string
+- allow_anonymous_questions : bool
+- question_id_form_me : vector<int>
+- question_id_to_question_ids_thread : map<int, vector<int>>
+
++ User():...{}
++ User(str:string) {...}
++ to_string() : string
++ print() : void
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+									   QuestionManager
+-----------------------------------------------------------------------------------------
+
+- question_id_to_question_ids_thread : map<int, vector<int>>
+- question_id_to_QuestionObject : map<int, Question>
+- last_id : int
+
++ QuestionManager():...{}
++ load_data_base() : void
++ fill_user_question(user:User) : void
++ print_user_to_question(user:User) : void
++ print_user_from_question(user:User) : void
++ ask_question(user:User, to_user_pair:pair<int, int>) : void
++ answer_question(user:User) : void
++ delete_question(user:User) : void
++ list_feed() : void
++ update_data_base() : void
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+									   UserManager
+-----------------------------------------------------------------------------------------
+
+- user_name_to_UserObject : map<int, User>
+- currant_user : User
+- last_id : int
+
++ UserManager():...{}
++ load_data_base() : void
++ log_in() : void
++ sign_up() : void
++ list_user_names_ids() : void
++ read_user_id() : pair<int, int>
++ update_data_base() : void
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+									   AskMeSystem
+-----------------------------------------------------------------------------------------
+
+- UserManager : UserManager
+- QusetionManager : QusetionManager
+
++ load_data_base(fill_user_questions:bool = false) : void
++ run() : void
+-----------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------
+									   View
+-----------------------------------------------------------------------------------------
+
++ show_read_menu(choices:vector<string>) : int
++ read_int(low:int, high:int) : int
++ read_question_id(user:User) : int
++ read_question_id_thread(user:User) : int
++ access_system() : void
++ menu() : void
+-----------------------------------------------------------------------------------------
+
+
+
+
